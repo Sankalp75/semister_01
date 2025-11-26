@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+// User-defined function with no return type and no arguments
+void sum() {
+    int a, b, result;
+
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &a);
+
+    printf("Enter second number: ");
+    scanf("%d", &b);
+
+    // Perform addition
+    result = a + b;
+
+    // Display result
+    printf("Sum = %d\n", result);
+}
+
+int main() {
+    // Call the function
+    sum();
+
+    return 0;
+}
