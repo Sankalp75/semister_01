@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+int main() {
+    int n, maxIndex = 0;
+    float efficiency[100];  // array to store efficiency values
+
+    printf("Enter number of machines: ");
+    scanf("%d", &n);
+
+    // Input efficiency of n machines
+    for (int i = 0; i < n; i++) {
+        printf("Enter efficiency of machine %d (%%): ", i + 1);
+        scanf("%f", &efficiency[i]);
+    }
+
+    // Find machine with maximum efficiency
+    for (int i = 1; i < n; i++) {
+        if (efficiency[i] > efficiency[maxIndex]) {
+            maxIndex = i;
+        }
+    }
+
+    // Display all efficiencies
+    printf("\nEfficiency of Machines:\n");
+    for (int i = 0; i < n; i++) {
+        printf("Machine %d: %.2f %%\n", i + 1, efficiency[i]);
+    }
+
+    // Display machine with maximum efficiency
+    printf("\nMachine %d has the maximum efficiency: %.2f %%\n", 
+           maxIndex + 1, efficiency[maxIndex]);
+
+    return 0;
+}
