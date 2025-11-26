@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+    int *ptr1, *ptr2;
+
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Assign pointers
+    ptr1 = &num1;
+    ptr2 = &num2;
+
+    // Perform arithmetic operations using pointers
+    printf("\nResults of Arithmetic Operations:\n");
+    printf("Addition: %d + %d = %d\n", *ptr1, *ptr2, (*ptr1 + *ptr2));
+    printf("Subtraction: %d - %d = %d\n", *ptr1, *ptr2, (*ptr1 - *ptr2));
+    printf("Multiplication: %d * %d = %d\n", *ptr1, *ptr2, (*ptr1 * *ptr2));
+
+    if (*ptr2 != 0) { // Avoid division by zero
+        printf("Division: %d / %d = %d\n", *ptr1, *ptr2, (*ptr1 / *ptr2));
+        printf("Modulus: %d %% %d = %d\n", *ptr1, *ptr2, (*ptr1 % *ptr2));
+    } else {
+        printf("Division and Modulus not possible (denominator is zero).\n");
+    }
+
+    return 0;
+}
