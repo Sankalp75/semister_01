@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char str[100];       // Array to store string
+    char *ptr;           // Pointer to traverse string
+    int length = 0;
+
+    // Input string
+    printf("Enter a string: ");
+    scanf("%s", str);   // Reads string until whitespace
+
+    // Assign pointer to start of string
+    ptr = str;
+
+    // Traverse string until null character '\0'
+    while (*ptr != '\0') {
+        length++;
+        ptr++;   // Move pointer to next character
+    }
+
+    // Display length
+    printf("Length of the string = %d\n", length);
+
+    return 0;
+}
