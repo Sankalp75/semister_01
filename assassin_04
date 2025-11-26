@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    // Read two numbers from user
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Perform operations
+    printf("\nResults of operations:\n");
+    printf("Addition: %d + %d = %d\n", num1, num2, num1 + num2);
+    printf("Subtraction: %d - %d = %d\n", num1, num2, num1 - num2);
+    printf("Multiplication: %d * %d = %d\n", num1, num2, num1 * num2);
+
+    // Handle division carefully (avoid divide by zero)
+    if (num2 != 0) {
+        printf("Division: %d / %d = %.2f\n", num1, num2, (float)num1 / num2);
+    } else {
+        printf("Division: Cannot divide by zero!\n");
+    }
+
+    return 0;
+}
