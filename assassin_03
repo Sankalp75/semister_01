@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    char forename[50];
+    char surname[50];
+    int yearOfBirth;
+
+    // Input details
+    printf("Enter forename: ");
+    scanf("%49s", forename);
+
+    printf("Enter surname: ");
+    scanf("%49s", surname);
+
+    printf("Enter year of birth: ");
+    scanf("%d", &yearOfBirth);
+
+    // Output details
+    printf("\n--- Student Information ---\n");
+    printf("Forename     : %s\n", forename);
+    printf("Surname      : %s\n", surname);
+    printf("Year of Birth: %d\n", yearOfBirth);
+
+    return 0;
+}
