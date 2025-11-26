@@ -1,0 +1,44 @@
+#include <stdio.h>
+
+int main() {
+    int A[50][50], B[50][50], C[50][50];
+    int n, i, j;
+
+    // Input matrix size
+    printf("Enter the size of the matrices (n x n): ");
+    scanf("%d", &n);
+
+    // Input matrix A
+    printf("Enter elements of matrix A (%d x %d):\n", n, n);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &A[i][j]);
+        }
+    }
+
+    // Input matrix B
+    printf("Enter elements of matrix B (%d x %d):\n", n, n);
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            scanf("%d", &B[i][j]);
+        }
+    }
+
+    // Compute C = A - B
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            C[i][j] = A[i][j] - B[i][j];
+        }
+    }
+
+    // Print result matrix C
+    printf("Resultant matrix C = A - B:\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("%d ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
