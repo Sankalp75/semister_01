@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variables
+    int num = 42;
+    float fnum = 3.14;
+    char ch = 'A';
+
+    // Print values
+    printf("--- Variable Values ---\n");
+    printf("Integer value : %d\n", num);
+    printf("Float value   : %.2f\n", fnum);
+    printf("Character     : %c\n", ch);
+
+    // Print memory addresses
+    printf("\n--- Memory Addresses ---\n");
+    printf("Address of integer : %p\n", (void*)&num);
+    printf("Address of float   : %p\n", (void*)&fnum);
+    printf("Address of char    : %p\n", (void*)&ch);
+
+    return 0;
+}
