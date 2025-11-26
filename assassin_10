@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int units, connectionType;
+    float bill;
+
+    // Input number of units
+    printf("Enter the number of units consumed: ");
+    scanf("%d", &units);
+
+    // Input type of connection
+    printf("Enter the type of connection (1 = Domestic, 2 = Commercial): ");
+    scanf("%d", &connectionType);
+
+    // Calculate bill using switch case
+    switch(connectionType) {
+        case 1: // Domestic
+            bill = units * 0.5;
+            printf("Connection Type: Domestic\n");
+            printf("Electricity Bill = Rs %.2f\n", bill);
+            break;
+
+        case 2: // Commercial
+            bill = units * 0.8;
+            printf("Connection Type: Commercial\n");
+            printf("Electricity Bill = Rs %.2f\n", bill);
+            break;
+
+        default:
+            printf("Invalid connection type entered!\n");
+            break;
+    }
+
+    return 0;
+}
