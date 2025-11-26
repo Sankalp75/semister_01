@@ -1,0 +1,35 @@
+#include <stdio.h>
+#define PI 3.14159   // Define constant value of PI
+
+// Function to calculate and display surface area
+void surfaceArea(float radius, float height) {
+    float area;
+    // Formula: 2πr(h + r)
+    area = 2 * PI * radius * (height + radius);
+    printf("Surface Area of Cylinder = %.2f\n", area);
+}
+
+// Function to calculate and display volume
+void volume(float radius, float height) {
+    float vol;
+    // Formula: πr^2h
+    vol = PI * radius * radius * height;
+    printf("Volume of Cylinder = %.2f\n", vol);
+}
+
+int main() {
+    float radius, height;
+
+    // Input radius and height
+    printf("Enter the radius of the cylinder: ");
+    scanf("%f", &radius);
+
+    printf("Enter the height of the cylinder: ");
+    scanf("%f", &height);
+
+    // Call functions
+    surfaceArea(radius, height);
+    volume(radius, height);
+
+    return 0;
+}
