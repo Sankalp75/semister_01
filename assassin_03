@@ -1,0 +1,26 @@
+#include <stdio.h>
+
+int main() {
+    // Declare variables of different types
+    char c = 'A';
+    int i = 12345;
+    float f = 3.14159;
+    long long ll = 9876543210LL;
+
+    // Print values and addresses
+    printf("Variable values and their memory addresses:\n\n");
+
+    printf("char c = %c\t\tAddress: %p\n", c, (void*)&c);
+    printf("int i = %d\t\tAddress: %p\n", i, (void*)&i);
+    printf("float f = %f\tAddress: %p\n", f, (void*)&f);
+    printf("long long ll = %lld\tAddress: %p\n", ll, (void*)&ll);
+
+    // Print sizes for deeper understanding
+    printf("\nSizes of each type:\n");
+    printf("sizeof(char) = %zu bytes\n", sizeof(c));
+    printf("sizeof(int) = %zu bytes\n", sizeof(i));
+    printf("sizeof(float) = %zu bytes\n", sizeof(f));
+    printf("sizeof(long long) = %zu bytes\n", sizeof(ll));
+
+    return 0;
+}
