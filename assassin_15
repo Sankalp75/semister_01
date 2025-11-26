@@ -1,0 +1,34 @@
+#include <stdio.h>
+
+#define MAX_LENGTH 30   // Maximum allowed characters in database
+
+int main() {
+    char product[100];   // Buffer for product name
+    char *ptr;           // Pointer to traverse string
+    int length = 0;
+
+    // Input product name (with spaces)
+    printf("Enter product name: ");
+    fgets(product, sizeof(product), stdin);
+
+    // Assign pointer to start of string
+    ptr = product;
+
+    // Traverse string until null character '\0' or newline
+    while (*ptr != '\0' && *ptr != '\n') {
+        length++;
+        ptr++;   // Move pointer to next character
+    }
+
+    // Display length
+    printf("\nProduct name length = %d characters\n", length);
+
+    // Validate against maximum allowed length
+    if (length > MAX_LENGTH) {
+        printf("⚠️ Error: Product name exceeds maximum allowed length (%d).\n", MAX_LENGTH);
+    } else {
+        printf("✅ Product name is valid and can be stored in the database.\n");
+    }
+
+    return 0;
+}
