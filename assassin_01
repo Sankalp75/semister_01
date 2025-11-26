@@ -1,0 +1,17 @@
+#include <stdio.h>
+
+int main() {
+    int roll_number;  // variable to store student's roll number
+
+    // Input the roll number
+    printf("Enter the student's roll number: ");
+    scanf("%d", &roll_number);
+
+    // Print the value
+    printf("Student's Roll Number: %d\n", roll_number);
+
+    // Print the memory address using %p format specifier
+    printf("Memory Address of Roll Number: %p\n", (void*)&roll_number);
+
+    return 0;
+}
