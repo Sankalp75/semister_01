@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int salary1, salary2;
+    int *ptr1, *ptr2;
+
+    // Input salaries
+    printf("Enter salary of Employee 1: ₹");
+    scanf("%d", &salary1);
+
+    printf("Enter salary of Employee 2: ₹");
+    scanf("%d", &salary2);
+
+    // Assign pointers
+    ptr1 = &salary1;
+    ptr2 = &salary2;
+
+    // Compare using pointers
+    if (*ptr1 > *ptr2) {
+        printf("\nEmployee 1 has the higher salary: ₹%d\n", *ptr1);
+    } else if (*ptr2 > *ptr1) {
+        printf("\nEmployee 2 has the higher salary: ₹%d\n", *ptr2);
+    } else {
+        printf("\nBoth employees have equal salaries: ₹%d\n", *ptr1);
+    }
+
+    return 0;
+}
