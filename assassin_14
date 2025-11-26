@@ -1,0 +1,32 @@
+#include <stdio.h>
+
+// Function to swap two characters using pointers
+void swapChars(char *a, char *b) {
+    char temp;
+    temp = *a;   // store value of a
+    *a = *b;     // assign value of b to a
+    *b = temp;   // assign stored value to b
+}
+
+int main() {
+    char ch1, ch2;
+
+    // Input two characters
+    printf("Enter first character: ");
+    scanf(" %c", &ch1);   // space before %c to skip whitespace
+    printf("Enter second character: ");
+    scanf(" %c", &ch2);
+
+    // Display before swapping
+    printf("\nBefore Swapping:\n");
+    printf("ch1 = %c, ch2 = %c\n", ch1, ch2);
+
+    // Call swap function
+    swapChars(&ch1, &ch2);
+
+    // Display after swapping
+    printf("\nAfter Swapping:\n");
+    printf("ch1 = %c, ch2 = %c\n", ch1, ch2);
+
+    return 0;
+}
