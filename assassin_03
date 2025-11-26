@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+// User-defined function with integer return type and two arguments
+int mul(int a, int b) {
+    return a * b;  // Perform multiplication and return result
+}
+
+int main() {
+    int num1, num2, product;
+
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Call the function with arguments
+    product = mul(num1, num2);
+
+    // Display result
+    printf("Multiplication result = %d\n", product);
+
+    return 0;
+}
