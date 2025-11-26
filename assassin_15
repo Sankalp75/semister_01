@@ -1,0 +1,43 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the matrices (n): ");
+    scanf("%d", &n);
+
+    float A[n][n], B[n][n], C[n][n];
+
+    // Input matrix A
+    printf("Enter elements of matrix A (%d x %d):\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%f", &A[i][j]);
+        }
+    }
+
+    // Input matrix B
+    printf("Enter elements of matrix B (%d x %d):\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%f", &B[i][j]);
+        }
+    }
+
+    // Compute C = 2.3*A + 3.5*B
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            C[i][j] = 2.3f * A[i][j] + 3.5f * B[i][j];
+        }
+    }
+
+    // Print result
+    printf("Resultant matrix C = 2.3*A + 3.5*B:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%6.2f ", C[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
