@@ -1,0 +1,27 @@
+#include <stdio.h>
+
+int main() {
+    int num, sum = 0;
+
+    printf("Enter integers (enter 0 to stop):\n");
+
+    // Keep reading numbers until user enters 0
+    while (1) {
+        scanf("%d", &num);
+
+        if (num == 0) {
+            // Stop when user enters 0
+            break;
+        }
+
+        if (num > 0) {
+            // Add only positive numbers
+            sum += num;
+        }
+    }
+
+    // Print the result
+    printf("Sum of all positive integers entered = %d\n", sum);
+
+    return 0;
+}
