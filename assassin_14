@@ -1,0 +1,35 @@
+#include <stdio.h>
+
+int main() {
+    int n;
+    printf("Enter the size of the matrix (n): ");
+    scanf("%d", &n);
+
+    int matrix[n][n], transpose[n][n];
+
+    // Input matrix elements
+    printf("Enter the elements of the %d x %d matrix:\n", n, n);
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            scanf("%d", &matrix[i][j]);
+        }
+    }
+
+    // Compute transpose
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            transpose[j][i] = matrix[i][j];
+        }
+    }
+
+    // Output transpose
+    printf("Transpose of the matrix:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("%d ", transpose[i][j]);
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
