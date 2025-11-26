@@ -1,0 +1,30 @@
+#include <stdio.h>
+#define PI 3.14159   // Define constant value of PI
+
+// Function to calculate surface area of a sphere
+float surfaceArea(float radius) {
+    return 4 * PI * radius * radius;
+}
+
+// Function to calculate volume of a sphere
+float volume(float radius) {
+    return (4.0 / 3.0) * PI * radius * radius * radius;
+}
+
+int main() {
+    float radius, area, vol;
+
+    // Input radius
+    printf("Enter the radius of the sphere: ");
+    scanf("%f", &radius);
+
+    // Call functions
+    area = surfaceArea(radius);
+    vol = volume(radius);
+
+    // Display results
+    printf("Surface Area of Sphere = %.2f\n", area);
+    printf("Volume of Sphere = %.2f\n", vol);
+
+    return 0;
+}
