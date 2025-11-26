@@ -1,0 +1,29 @@
+#include <stdio.h>
+
+int main() {
+    int num1, num2;
+
+    // Input two numbers
+    printf("Enter first number: ");
+    scanf("%d", &num1);
+
+    printf("Enter second number: ");
+    scanf("%d", &num2);
+
+    // Perform arithmetic operations
+    printf("\n--- Arithmetic Operations ---\n");
+    printf("Addition       : %d + %d = %d\n", num1, num2, num1 + num2);
+    printf("Subtraction    : %d - %d = %d\n", num1, num2, num1 - num2);
+    printf("Multiplication : %d * %d = %d\n", num1, num2, num1 * num2);
+
+    // Division and modulus need a check to avoid division by zero
+    if (num2 != 0) {
+        printf("Division       : %d / %d = %.2f\n", num1, num2, (float)num1 / num2);
+        printf("Modulus        : %d %% %d = %d\n", num1, num2, num1 % num2);
+    } else {
+        printf("Division       : Not possible (denominator is zero)\n");
+        printf("Modulus        : Not possible (denominator is zero)\n");
+    }
+
+    return 0;
+}
