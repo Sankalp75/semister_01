@@ -1,0 +1,23 @@
+#include <stdio.h>
+
+int main() {
+    float price;              // variable to store product price
+    char name[50];            // array to store product name (string)
+
+    // Input product details
+    printf("Enter product name: ");
+    scanf("%49s", name);      // read string safely (up to 49 chars + null terminator)
+
+    printf("Enter product price: ");
+    scanf("%f", &price);
+
+    // Display product details
+    printf("\nProduct Name: %s\n", name);
+    printf("Product Price: %.2f\n", price);
+
+    // Display memory addresses
+    printf("Memory Address of Name: %p\n", (void*)name);
+    printf("Memory Address of Price: %p\n", (void*)&price);
+
+    return 0;
+}
