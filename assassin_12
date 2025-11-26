@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int floor;        // Current floor
+    int *ptr_floor;   // Pointer to floor
+
+    // Input current floor
+    printf("Enter current floor number: ");
+    scanf("%d", &floor);
+
+    // Assign pointer
+    ptr_floor = &floor;
+
+    // Increment floor using pointer
+    *ptr_floor = *ptr_floor + 1;
+
+    // Display next floor
+    printf("The elevator will move to floor: %d\n", floor);
+
+    return 0;
+}
