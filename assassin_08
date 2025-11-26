@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    int totalMarks, subjects;
+    float average;
+    int *ptr_total, *ptr_subjects;
+    float *ptr_avg;
+
+    // Input total marks and number of subjects
+    printf("Enter total marks obtained: ");
+    scanf("%d", &totalMarks);
+
+    printf("Enter number of subjects: ");
+    scanf("%d", &subjects);
+
+    // Assign pointers
+    ptr_total = &totalMarks;
+    ptr_subjects = &subjects;
+    ptr_avg = &average;
+
+    // Calculate average using pointers
+    *ptr_avg = (float)(*ptr_total) / (*ptr_subjects);
+
+    // Display result
+    printf("\nAverage Marks: %.2f\n", average);
+
+    return 0;
+}
