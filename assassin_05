@@ -1,0 +1,36 @@
+#include <stdio.h>
+
+int main() {
+    int n, i;
+
+    // Input size of matrices
+    printf("Enter the number of rows (n): ");
+    scanf("%d", &n);
+
+    int A[n], B[n], C[n];
+
+    // Input matrix A
+    printf("Enter elements of matrix A (%d x 1):\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &A[i]);
+    }
+
+    // Input matrix B
+    printf("Enter elements of matrix B (%d x 1):\n", n);
+    for (i = 0; i < n; i++) {
+        scanf("%d", &B[i]);
+    }
+
+    // Compute C = 2*A + 3*B
+    for (i = 0; i < n; i++) {
+        C[i] = 2 * A[i] + 3 * B[i];
+    }
+
+    // Print result matrix C
+    printf("Resultant matrix C = 2*A + 3*B:\n");
+    for (i = 0; i < n; i++) {
+        printf("%d\n", C[i]);
+    }
+
+    return 0;
+}
