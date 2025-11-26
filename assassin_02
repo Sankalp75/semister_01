@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main() {
+    int num;
+    float fnum;
+    double dnum;
+
+    // Input values
+    printf("Enter an integer: ");
+    scanf("%d", &num);
+
+    printf("Enter a float: ");
+    scanf("%f", &fnum);
+
+    printf("Enter a double: ");
+    scanf("%lf", &dnum);
+
+    // Display values
+    printf("\n--- You Entered ---\n");
+    printf("Integer : %d\n", num);
+    printf("Float   : %.2f\n", fnum);   // formatted to 2 decimal places
+    printf("Double  : %.4lf\n", dnum);  // formatted to 4 decimal places
+
+    return 0;
+}
