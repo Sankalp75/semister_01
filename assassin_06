@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int wallet = 2000;             // Initial wallet balance
+    int price;                     // Price of items bought
+    int *ptr_wallet = &wallet;     // Pointer to wallet balance
+
+    printf("Initial Wallet Balance: ₹%d\n", wallet);
+
+    // Read the price of items
+    printf("Enter the price of items: ₹");
+    scanf("%d", &price);
+
+    // Update balance using pointer
+    *ptr_wallet = *ptr_wallet - price;
+
+    // Display remaining balance
+    printf("Remaining Balance: ₹%d\n", wallet);
+
+    return 0;
+}
