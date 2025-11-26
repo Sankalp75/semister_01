@@ -1,0 +1,21 @@
+#include <stdio.h>
+
+int main() {
+    int balance = 5000;        // Initial balance
+    int deposit;               // Amount to deposit
+    int *ptr_balance = &balance; // Pointer to balance
+
+    printf("Initial Balance: ₹%d\n", balance);
+
+    // Read deposit amount
+    printf("Enter the amount to deposit: ₹");
+    scanf("%d", &deposit);
+
+    // Update balance using pointer
+    *ptr_balance = *ptr_balance + deposit;
+
+    // Display updated balance
+    printf("Updated Balance: ₹%d\n", balance);
+
+    return 0;
+}
