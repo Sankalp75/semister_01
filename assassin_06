@@ -1,0 +1,24 @@
+#include <stdio.h>
+
+int main() {
+    int rows, i, j;
+
+    // Input number of rows
+    printf("Enter number of rows: ");
+    scanf("%d", &rows);
+
+    // Loop through rows
+    for (i = 1; i <= rows; i++) {
+        // Print each row
+        for (j = 1; j <= rows; j++) {
+            if (i % 2 == 1) {
+                printf("1 ");
+            } else {
+                printf("0 ");
+            }
+        }
+        printf("\n"); // Move to next line after each row
+    }
+
+    return 0;
+}
