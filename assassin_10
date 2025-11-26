@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main() {
+    char email[100];
+    char *ptr;
+
+    printf("Enter your email ID: ");
+    fgets(email, sizeof(email), stdin);
+
+    // Remove newline if present
+    email[strcspn(email, "\n")] = '\0';
+
+    // Find '@' using pointer
+    ptr = email;
+    while (*ptr != '\0' && *ptr != '@') {
+        ptr++;
+    }
+
+    // Check if '@' was found
+    if (*ptr == '@') {
+        ptr++;  // move past '@'
+        printf("Domain name: %s\n", ptr);
+    } else {
+        printf("Invalid email ID. '@' not found.\n");
+    }
+
+    return 0;
+}
