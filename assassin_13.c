@@ -14,22 +14,17 @@ int main() {
 
     printf("Enter number of employees: ");
     scanf("%d", &n);
-
-    // Open file in write mode
     fp = fopen("emp_2025.txt", "w");
     if (fp == NULL) {
         printf("Error opening file!\n");
         return 1;
     }
 
-    getchar(); // clear buffer
-
-    // Input employee details and write to file
+    getchar(); 
     for (int i = 0; i < n; i++) {
         printf("\nEnter Employee %d Name: ", i + 1);
         fgets(e.name, sizeof(e.name), stdin);
-
-        // Remove newline from name
+        
         size_t len = strlen(e.name);
         if (len > 0 && e.name[len - 1] == '\n') {
             e.name[len - 1] = '\0';
@@ -37,16 +32,13 @@ int main() {
 
         printf("Enter Employee %d Salary: ", i + 1);
         scanf("%lf", &e.salary);
-        getchar(); // clear newline
+        getchar(); 
 
-        // Write to file
         fprintf(fp, "%s %.2lf\n", e.name, e.salary);
     }
 
     fclose(fp);
     printf("\nEmployee details successfully written to emp_2025.txt\n");
-
-    // Now read back and count employees with salary < 5,00,000
     fp = fopen("emp_2025.txt", "r");
     if (fp == NULL) {
         printf("Error opening file for reading!\n");
@@ -60,8 +52,6 @@ int main() {
     }
 
     fclose(fp);
-
     printf("\nTotal number of employees with salary less than 5,00,000: %d\n", count);
-
     return 0;
 }
