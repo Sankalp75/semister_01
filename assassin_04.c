@@ -6,8 +6,6 @@ int main() {
     int n;
     char name[100];
     float price;
-
-    // Open file in write mode
     fp = fopen("Books.txt", "w");
     if (fp == NULL) {
         printf("Error opening file!\n");
@@ -16,15 +14,11 @@ int main() {
 
     printf("Enter number of books: ");
     scanf("%d", &n);
-
-    // Clear input buffer before using fgets
     getchar();
 
     for (int i = 0; i < n; i++) {
         printf("Enter name of book %d: ", i + 1);
         fgets(name, sizeof(name), stdin);
-
-        // Remove newline character from fgets
         size_t len = strlen(name);
         if (len > 0 && name[len - 1] == '\n') {
             name[len - 1] = '\0';
@@ -32,11 +26,7 @@ int main() {
 
         printf("Enter price of book %d: ", i + 1);
         scanf("%f", &price);
-
-        // Clear buffer again before next fgets
         getchar();
-
-        // Write to file
         fprintf(fp, "Book %d: %s, Price: %.2f\n", i + 1, name, price);
     }
 
