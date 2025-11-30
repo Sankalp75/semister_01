@@ -14,8 +14,6 @@ int main() {
 
     printf("Enter number of students: ");
     scanf("%d", &n);
-
-    // Open file in write mode
     fp = fopen("student.txt", "w");
     if (fp == NULL) {
         printf("Error opening file!\n");
@@ -24,19 +22,15 @@ int main() {
 
     struct Student s;
 
-    // Clear buffer
     getchar();
 
-    // Input student details and write to file
     for (int i = 0; i < n; i++) {
         printf("\nEnter Student %d ID: ", i + 1);
         scanf("%d", &s.id);
-        getchar(); // clear newline
+        getchar(); 
 
         printf("Enter Student %d Name: ", i + 1);
         fgets(s.name, sizeof(s.name), stdin);
-
-        // Remove newline from name
         size_t len = strlen(s.name);
         if (len > 0 && s.name[len - 1] == '\n') {
             s.name[len - 1] = '\0';
@@ -44,17 +38,13 @@ int main() {
 
         printf("Enter Student %d CPL Mark: ", i + 1);
         scanf("%d", &s.cpl_mark);
-
-        // Write to file
         fprintf(fp, "%d %s %d\n", s.id, s.name, s.cpl_mark);
 
-        getchar(); // clear newline for next loop
+        getchar(); 
     }
 
     fclose(fp);
     printf("\nData successfully written to student.txt\n");
-
-    // Now read back and display students with marks > 75
     fp = fopen("student.txt", "r");
     if (fp == NULL) {
         printf("Error opening file for reading!\n");
