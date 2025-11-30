@@ -5,9 +5,8 @@ int main() {
     char str[100];
 
     printf("Enter a string: ");
-    fgets(str, sizeof(str), stdin);  // safer than gets()
-
-    // Remove newline if present
+    fgets(str, sizeof(str), stdin); 
+    
     str[strcspn(str, "\n")] = '\0';
 
     printf("Length of the string: %lu\n", strlen(str));
