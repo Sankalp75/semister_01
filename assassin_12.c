@@ -1,24 +1,18 @@
 #include <stdio.h>
-
-// Define the Machine structure
 struct Machine {
     char name[100];
     float powerRating;   // in kW
     float efficiency;    // in %
 };
-
-// Function to input machine details
 void inputMachine(struct Machine *m, int index) {
     printf("\nEnter details for Machine %d:\n", index + 1);
     printf("Machine Name: ");
-    scanf(" %[^\n]", m->name);   // read string with spaces
+    scanf(" %[^\n]", m->name);
     printf("Power Rating (kW): ");
     scanf("%f", &m->powerRating);
     printf("Efficiency (%%): ");
     scanf("%f", &m->efficiency);
 }
-
-// Function to display machine details
 void displayMachine(struct Machine m, int index) {
     printf("\nMachine %d Information:\n", index + 1);
     printf("Name: %s\n", m.name);
@@ -30,12 +24,9 @@ int main() {
     struct Machine machines[3];
     int maxIndex = 0, minIndex = 0;
 
-    // Input details for 3 machines
     for (int i = 0; i < 3; i++) {
         inputMachine(&machines[i], i);
     }
-
-    // Find most efficient and least efficient machines
     for (int i = 1; i < 3; i++) {
         if (machines[i].efficiency > machines[maxIndex].efficiency) {
             maxIndex = i;
@@ -44,14 +35,10 @@ int main() {
             minIndex = i;
         }
     }
-
-    // Display all machines
     printf("\n--- All Machines ---");
     for (int i = 0; i < 3; i++) {
         displayMachine(machines[i], i);
     }
-
-    // Display results
     printf("\n--- Most Efficient Machine ---");
     displayMachine(machines[maxIndex], maxIndex);
 
