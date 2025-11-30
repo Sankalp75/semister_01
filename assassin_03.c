@@ -1,24 +1,20 @@
 #include <stdio.h>
-
-// Define the Student structure
 struct Student {
     char name[100];
     int age;
     float marks;
 };
 
-// Function to input student details
 void inputStudent(struct Student *s, int index) {
     printf("\nEnter details for Student %d:\n", index + 1);
     printf("Name: ");
-    scanf(" %[^\n]", s->name);   // read string with spaces
+    scanf(" %[^\n]", s->name); 
     printf("Age: ");
     scanf("%d", &s->age);
     printf("Marks: ");
     scanf("%f", &s->marks);
 }
 
-// Function to display student details
 void displayStudent(struct Student s, int index) {
     printf("\nStudent %d Information:\n", index + 1);
     printf("Name: %s\n", s.name);
@@ -27,17 +23,13 @@ void displayStudent(struct Student s, int index) {
 }
 
 int main() {
-    struct Student students[3];  // Array of 3 students
+    struct Student students[3]; 
 
-    // Input details for 3 students
     for (int i = 0; i < 3; i++) {
         inputStudent(&students[i], i);
     }
-
-    // Display details of 3 students
     for (int i = 0; i < 3; i++) {
         displayStudent(students[i], i);
     }
-
     return 0;
 }
