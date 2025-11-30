@@ -6,20 +6,15 @@ int main() {
 
     printf("Enter number of machines: ");
     scanf("%d", &n);
+    
+    float output[n];  
 
-    float output[n];  // Array to store daily output of n machines
-
-    // Input daily output
     for (int i = 0; i < n; i++) {
         printf("Enter daily output of machine %d (in units): ", i + 1);
         scanf("%f", &output[i]);
         sum += output[i];
     }
-
-    // Calculate average
     average = sum / n;
-
-    // Display results
     printf("\nDaily Output of Machines:\n");
     for (int i = 0; i < n; i++) {
         printf("Machine %d: %.2f units\n", i + 1, output[i]);
