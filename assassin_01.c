@@ -4,8 +4,7 @@
 int main() {
     FILE *fp;
     int n, roll_no;
-
-    // Open file in write mode (creates file if it doesn't exist)
+    
     fp = fopen("data.txt", "w");
     if (fp == NULL) {
         printf("Error opening file!\n");
@@ -18,8 +17,6 @@ int main() {
     for (int i = 0; i < n; i++) {
         printf("Enter Roll No of student %d: ", i + 1);
         scanf("%d", &roll_no);
-
-        // Write roll number to file
         fprintf(fp, "Student %d Roll No: %d\n", i + 1, roll_no);
     }
 
