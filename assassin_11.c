@@ -6,13 +6,12 @@ int main() {
 
     printf("Enter first city name: ");
     fgets(city1, sizeof(city1), stdin);
-    city1[strcspn(city1, "\n")] = '\0';  // remove newline
+    city1[strcspn(city1, "\n")] = '\0'; 
 
-    printf("Enter second city name: ");
-    fgets(city2, sizeof(city2), stdin);
-    city2[strcspn(city2, "\n")] = '\0';  // remove newline
+         printf("Enter second city name: ");
+         fgets(city2, sizeof(city2), stdin);
+         city2[strcspn(city2, "\n")] = '\0'; 
 
-    // Compare case-sensitive
     if (strcmp(city1, city2) == 0) {
         printf("The city names are the same.\n");
     } else {
