@@ -3,9 +3,7 @@
 
 int main() {
     FILE *fp;
-    char line[100];  // buffer to store each line
-
-    // Open file in read mode
+    char line[100];
     fp = fopen("data.txt", "r");
     if (fp == NULL) {
         printf("Error opening file! Make sure data.txt exists.\n");
@@ -13,8 +11,6 @@ int main() {
     }
 
     printf("Contents of data.txt:\n\n");
-
-    // Read line by line until EOF
     while (fgets(line, sizeof(line), fp) != NULL) {
         printf("%s", line);  // print each line
     }
