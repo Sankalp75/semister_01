@@ -1,24 +1,18 @@
 #include <stdio.h>
-
-// Define the Car structure
 struct Car {
     char model[100];
-    int engineCapacity;   // in cc
-    float fuelEfficiency; // in km/l
+    int engineCapacity; 
+    float fuelEfficiency;
 };
-
-// Function to input car details
 void inputCar(struct Car *c, int index) {
     printf("\nEnter details for Car %d:\n", index + 1);
     printf("Model Name: ");
-    scanf(" %[^\n]", c->model);   // read string with spaces
+    scanf(" %[^\n]", c->model);   
     printf("Engine Capacity (cc): ");
     scanf("%d", &c->engineCapacity);
     printf("Fuel Efficiency (km/l): ");
     scanf("%f", &c->fuelEfficiency);
 }
-
-// Function to display car details
 void displayCar(struct Car c, int index) {
     printf("\nCar %d Information:\n", index + 1);
     printf("Model: %s\n", c.model);
@@ -29,21 +23,13 @@ void displayCar(struct Car c, int index) {
 int main() {
     struct Car cars[2];
     float averageEfficiency;
-
-    // Input details for two cars
     for (int i = 0; i < 2; i++) {
         inputCar(&cars[i], i);
     }
-
-    // Display details
     for (int i = 0; i < 2; i++) {
         displayCar(cars[i], i);
     }
-
-    // Calculate average fuel efficiency
     averageEfficiency = (cars[0].fuelEfficiency + cars[1].fuelEfficiency) / 2.0;
-
     printf("\nAverage Fuel Efficiency of Both Cars: %.2f km/l\n", averageEfficiency);
-
     return 0;
 }
