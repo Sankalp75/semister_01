@@ -1,24 +1,18 @@
 #include <stdio.h>
-
-// Define the WeatherStation structure
 struct WeatherStation {
     char stationName[100];
     char city[100];
-    float temperature;   // in °C
+    float temperature;   
 };
-
-// Function to input weather station details
 void inputStation(struct WeatherStation *ws, int index) {
     printf("\nEnter details for Weather Station %d:\n", index + 1);
     printf("Station Name: ");
-    scanf(" %[^\n]", ws->stationName);   // read string with spaces
+    scanf(" %[^\n]", ws->stationName); 
     printf("City: ");
     scanf(" %[^\n]", ws->city);
     printf("Temperature (°C): ");
     scanf("%f", &ws->temperature);
 }
-
-// Function to display weather station details
 void displayStation(struct WeatherStation ws, int index) {
     printf("\nWeather Station %d Information:\n", index + 1);
     printf("Station Name: %s\n", ws.stationName);
@@ -30,12 +24,9 @@ int main() {
     struct WeatherStation stations[3];
     int maxIndex = 0, minIndex = 0;
 
-    // Input details for 3 stations
     for (int i = 0; i < 3; i++) {
         inputStation(&stations[i], i);
     }
-
-    // Find highest and lowest temperature
     for (int i = 1; i < 3; i++) {
         if (stations[i].temperature > stations[maxIndex].temperature) {
             maxIndex = i;
@@ -44,14 +35,10 @@ int main() {
             minIndex = i;
         }
     }
-
-    // Display all stations
     printf("\n--- All Weather Stations ---");
     for (int i = 0; i < 3; i++) {
         displayStation(stations[i], i);
     }
-
-    // Display results
     printf("\n--- Station with Highest Temperature ---");
     displayStation(stations[maxIndex], maxIndex);
 
