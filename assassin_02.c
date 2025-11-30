@@ -6,11 +6,8 @@ int main() {
 
     printf("Enter a string: ");
     fgets(source, sizeof(source), stdin);
-
-    // Remove newline if present
     source[strcspn(source, "\n")] = '\0';
 
-    // Copy string
     strcpy(destination, source);
 
     printf("Source string: %s\n", source);
