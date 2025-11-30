@@ -1,25 +1,20 @@
 #include <stdio.h>
 #include <string.h>
 
-// Define the Student structure
 struct Student {
     int roll;
     char name[100];
     float marks;
 };
-
-// Function to input student details
 void inputStudent(struct Student *s, int index) {
     printf("\nEnter details for Student %d:\n", index + 1);
     printf("Roll Number: ");
     scanf("%d", &s->roll);
     printf("Name: ");
-    scanf(" %[^\n]", s->name);   // read string with spaces
+    scanf(" %[^\n]", s->name);   
     printf("Marks: ");
     scanf("%f", &s->marks);
 }
-
-// Function to display student details
 void displayStudent(struct Student s) {
     printf("Roll Number: %d\n", s.roll);
     printf("Name: %s\n", s.name);
@@ -32,14 +27,11 @@ int main() {
     printf("Enter number of students: ");
     scanf("%d", &n);
 
-    struct Student students[n];  // Array of structures
+    struct Student students[n]; 
 
-    // Input details
     for (int i = 0; i < n; i++) {
         inputStudent(&students[i], i);
     }
-
-    // Search by roll number
     printf("\nEnter roll number to search: ");
     scanf("%d", &searchRoll);
 
