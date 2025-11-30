@@ -1,6 +1,4 @@
 #include <stdio.h>
-
-// Define the Employee structure
 struct Employee {
     int id;
     char name[100];
@@ -9,18 +7,14 @@ struct Employee {
 
 int main() {
     struct Employee emp;
-
-    // Input employee details
     printf("Enter Employee ID: ");
     scanf("%d", &emp.id);
 
     printf("Enter Employee Name: ");
-    scanf(" %[^\n]", emp.name);   // read string with spaces
+    scanf(" %[^\n]", emp.name);  
 
     printf("Enter Employee Salary: ");
     scanf("%f", &emp.salary);
-
-    // Display salary
     printf("\nEmployee Salary Information:\n");
     printf("Name: %s\n", emp.name);
     printf("ID: %d\n", emp.id);
