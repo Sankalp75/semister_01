@@ -5,15 +5,11 @@ int main() {
     FILE *fp;
     int count = 0;
     char ch;
-
-    // Open file in read mode
     fp = fopen("data.txt", "r");
     if (fp == NULL) {
         printf("Error opening file! Make sure data.txt exists.\n");
         return 1;
     }
-
-    // Count lines by checking for newline characters
     while ((ch = fgetc(fp)) != EOF) {
         if (ch == '\n') {
             count++;
@@ -21,8 +17,6 @@ int main() {
     }
 
     fclose(fp);
-
-    // If file is not empty, add 1 to count (last line may not end with '\n')
     if (count == 0) {
         printf("The file is empty.\n");
     } else {
