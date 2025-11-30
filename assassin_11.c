@@ -4,19 +4,16 @@
 int main() {
     FILE *fp;
     double T1, T2;
-    const double K = 237.0;   // W/mK
-    const double L = 0.01;    // m
-    const double A = 1.0;     // m^2
+    const double K = 237.0;   
+    const double L = 0.01;   
+    const double A = 1.0;    
     double Q;
 
-    // Open file in read mode
     fp = fopen("wall.txt", "r");
     if (fp == NULL) {
         printf("Error: Could not open wall.txt\n");
         return 1;
     }
-
-    // Read inner and outer surface temperatures
     if (fscanf(fp, "%lf %lf", &T1, &T2) != 2) {
         printf("Error: Could not read temperatures from wall.txt\n");
         fclose(fp);
@@ -25,10 +22,7 @@ int main() {
 
     fclose(fp);
 
-    // Fourier’s law calculation
     Q = K * A * (T1 - T2) / L;
-
-    // Display result
     printf("Inner Surface Temperature (T1): %.2f °C\n", T1);
     printf("Outer Surface Temperature (T2): %.2f °C\n", T2);
     printf("Heat Transfer Rate (Q): %.2f W\n", Q);
