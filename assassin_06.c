@@ -8,16 +8,14 @@ int main() {
     printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
 
-    // Initialize pointer to start of string
     ptr = str;
 
-    // Traverse string using pointer
     while (*ptr != '\0') {
         if (*ptr >= 'a' && *ptr <= 'z') {
-            *ptr = *ptr - 32;   // convert lowercase to uppercase
-            // alternatively: *ptr = toupper(*ptr);
+            *ptr = *ptr - 32;  
+       
         }
-        ptr++;  // move pointer to next character
+        ptr++;  
     }
 
     printf("String in uppercase: %s\n", str);
