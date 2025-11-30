@@ -1,24 +1,20 @@
 #include <stdio.h>
 
-// Define the Book structure
 struct Book {
     char title[100];
     char author[100];
     float price;
 };
 
-// Function to input book details
 void inputBook(struct Book *b, int index) {
     printf("\nEnter details for Book %d:\n", index + 1);
     printf("Title: ");
-    scanf(" %[^\n]", b->title);   // read string with spaces
+    scanf(" %[^\n]", b->title);  
     printf("Author: ");
     scanf(" %[^\n]", b->author);
     printf("Price: ");
     scanf("%f", &b->price);
 }
-
-// Function to display book details
 void displayBook(struct Book b) {
     printf("Title: %s\n", b.title);
     printf("Author: %s\n", b.author);
@@ -28,13 +24,10 @@ void displayBook(struct Book b) {
 int main() {
     struct Book books[3];
     int i, maxIndex = 0, minIndex = 0;
-
-    // Input details for 3 books
     for (i = 0; i < 3; i++) {
         inputBook(&books[i], i);
     }
 
-    // Find most expensive and lowest priced books
     for (i = 1; i < 3; i++) {
         if (books[i].price > books[maxIndex].price) {
             maxIndex = i;
@@ -44,10 +37,9 @@ int main() {
         }
     }
 
-    // Display results
+
     printf("\nMost Expensive Book:\n");
     displayBook(books[maxIndex]);
-
     printf("\nLowest Priced Book:\n");
     displayBook(books[minIndex]);
 
