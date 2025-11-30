@@ -1,24 +1,18 @@
 #include <stdio.h>
-
-// Define the SolarPanel structure
 struct SolarPanel {
     char model[100];
-    float capacity;       // in kW
-    float dailyOutput;    // in kWh
+    float capacity;    
+    float dailyOutput;    
 };
-
-// Function to input solar panel details
 void inputPanel(struct SolarPanel *p, int index) {
     printf("\nEnter details for Solar Panel %d:\n", index + 1);
     printf("Model Name: ");
-    scanf(" %[^\n]", p->model);   // read string with spaces
+    scanf(" %[^\n]", p->model); 
     printf("Capacity (in kW): ");
     scanf("%f", &p->capacity);
     printf("Daily Power Output (in kWh): ");
     scanf("%f", &p->dailyOutput);
 }
-
-// Function to display solar panel details
 void displayPanel(struct SolarPanel p, int index) {
     printf("\nSolar Panel %d Information:\n", index + 1);
     printf("Model: %s\n", p.model);
@@ -29,21 +23,13 @@ void displayPanel(struct SolarPanel p, int index) {
 int main() {
     struct SolarPanel panels[2];
     float averageOutput;
-
-    // Input details for two panels
     for (int i = 0; i < 2; i++) {
         inputPanel(&panels[i], i);
     }
-
-    // Display details
     for (int i = 0; i < 2; i++) {
         displayPanel(panels[i], i);
     }
-
-    // Calculate average daily power output
     averageOutput = (panels[0].dailyOutput + panels[1].dailyOutput) / 2.0;
-
     printf("\nAverage Daily Power Output of Both Panels: %.2f kWh\n", averageOutput);
-
     return 0;
 }
