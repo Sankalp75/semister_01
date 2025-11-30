@@ -1,6 +1,5 @@
 #include <stdio.h>
-#include <ctype.h>  // for tolower() and isalpha()
-
+#include <ctype.h>  
 int main() {
     char str[200];
     int vowels = 0, consonants = 0;
@@ -10,7 +9,7 @@ int main() {
     fgets(str, sizeof(str), stdin);
 
     for (i = 0; str[i] != '\0'; i++) {
-        char ch = tolower(str[i]);  // normalize to lowercase
+        char ch = tolower(str[i]); 
 
         if (isalpha(ch)) {
             if (ch == 'a' || ch == 'e' || ch == 'i' || ch == 'o' || ch == 'u') {
