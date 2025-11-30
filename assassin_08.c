@@ -8,7 +8,6 @@ int main() {
     printf("Enter a string: ");
     fgets(str, sizeof(str), stdin);
 
-    // Remove newline if present
     str[strcspn(str, "\n")] = '\0';
 
     length = strlen(str);
