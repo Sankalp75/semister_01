@@ -1,24 +1,18 @@
 #include <stdio.h>
-
-// Define the WindTurbine structure
 struct WindTurbine {
     char model[100];
-    float rotorDiameter;   // in meters
-    float outputPower;     // in kW
+    float rotorDiameter;  
+    float outputPower;     
 };
-
-// Function to input wind turbine details
 void inputTurbine(struct WindTurbine *t, int index) {
     printf("\nEnter details for Wind Turbine %d:\n", index + 1);
     printf("Model Name: ");
-    scanf(" %[^\n]", t->model);   // read string with spaces
+    scanf(" %[^\n]", t->model);   
     printf("Rotor Diameter (m): ");
     scanf("%f", &t->rotorDiameter);
     printf("Output Power (kW): ");
     scanf("%f", &t->outputPower);
 }
-
-// Function to display wind turbine details
 void displayTurbine(struct WindTurbine t, int index) {
     printf("\nWind Turbine %d Information:\n", index + 1);
     printf("Model: %s\n", t.model);
@@ -29,21 +23,15 @@ void displayTurbine(struct WindTurbine t, int index) {
 int main() {
     struct WindTurbine turbines[2];
     float averageOutput;
-
-    // Input details for two turbines
     for (int i = 0; i < 2; i++) {
         inputTurbine(&turbines[i], i);
     }
-
-    // Display details
     for (int i = 0; i < 2; i++) {
         displayTurbine(turbines[i], i);
     }
 
-    // Calculate average output power
+
     averageOutput = (turbines[0].outputPower + turbines[1].outputPower) / 2.0;
-
     printf("\nAverage Output Power of Both Turbines: %.2f kW\n", averageOutput);
-
     return 0;
 }
